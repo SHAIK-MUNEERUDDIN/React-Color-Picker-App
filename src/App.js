@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { useRef } from "react";
+import { FaPaintRoller } from "react-icons/fa";
+import DisplayItem from "./displayItem";
+import InputItem from "./inputItem";
 
 function App() {
+  const [displayCol, setDisplayCol] = useState("");
+  const [hexValue, setHexValue] = useState("");
+  const [isDarkText, setDarkText] = useState(true);
+
+  const inputRef = useRef();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex items-center justify-center flex-col gap-4 h-svh">
+      <h1 className="flex text-3xl text-pink-500 justify-center w-60">
+        Color <span className="text-green-700"> It</span>
+        <FaPaintRoller className="text-red-500" />
+      </h1>
+      <DisplayItem
+        displayCol={displayCol}
+        hexValue={hexValue}
+        isDarkText={isDarkText}
+      />
+      <InputItem
+        inputRef={inputRef}
+        displayCol={displayCol}
+        setDisplayCol={setDisplayCol}
+        setHexValue={setHexValue}
+        isDarkText={isDarkText}
+        setDarkText={setDarkText}
+      />
     </div>
   );
 }
