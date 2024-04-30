@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRef } from "react";
-import { FaPaintRoller } from "react-icons/fa";
+import { FaPaintBrush } from "react-icons/fa";
 import DisplayItem from "./displayItem";
 import InputItem from "./inputItem";
 
@@ -15,7 +15,7 @@ function App() {
     <div className="flex items-center justify-center flex-col gap-4 h-svh">
       <h1 className="flex text-3xl text-pink-500 justify-center w-60">
         Color <span className="text-green-700"> It</span>
-        <FaPaintRoller className="text-red-500" />
+        <FaPaintBrush className="text-red-500" />
       </h1>
       <DisplayItem
         displayCol={displayCol}
